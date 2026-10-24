@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waxal 2.0 — Apprendre le wolof</title>
+<meta name="description" content="Waxal 2.0 : apprenez le wolof avec des enregistrements natifs authentiques. Gratuit, sans compte.">
+<style>
+  :root{--bg:#060f1e;--card:#0d1e35;--line:#1a3355;--text:#f3f6fb;--muted:#8aa3bf;--accent:#f97316;--green:#16a34a}
+  @media (prefers-color-scheme:light){:root{--bg:#f7f8fb;--card:#fff;--line:#e5e7eb;--text:#111827;--muted:#5b6678}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{display:flex;justify-content:space-between;align-items:center;max-width:960px;margin:0 auto;padding:18px 20px}
+  .brand{font-weight:800;font-size:1.2rem;color:var(--accent);text-decoration:none}
+  .lang button{background:none;border:1px solid var(--line);color:var(--muted);padding:4px 12px;border-radius:999px;cursor:pointer;font:inherit;font-size:.85rem}
+  .lang button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .hero{max-width:960px;margin:0 auto;padding:48px 20px 24px}
+  .tag{display:inline-block;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:3px 12px;font-size:.78rem;letter-spacing:.04em}
+  h1{font-size:clamp(2.4rem,8vw,4rem);line-height:1.05;margin:.35em 0 .3em}
+  h1 span{color:var(--accent)}
+  .lead{color:var(--muted);max-width:560px;font-size:1.1rem}
+  .play{display:inline-flex;align-items:center;gap:12px;margin-top:22px;background:var(--green);color:#fff;text-decoration:none;border-radius:14px;padding:12px 22px;font-weight:700}
+  .play small{display:block;font-weight:400;font-size:.7rem;opacity:.85;line-height:1}
+  .note{margin-top:10px;color:var(--muted);font-size:.85rem}
+  .feat{max-width:960px;margin:0 auto;padding:24px 20px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .f{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .f b{display:block;margin:.3em 0 .2em}
+  .f p{margin:0;color:var(--muted);font-size:.95rem}
+  .e{font-size:1.6rem}
+  footer{max-width:960px;margin:0 auto;padding:24px 20px 56px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+  footer a{color:var(--muted);margin-right:16px}
+  html[data-lang="fr"] [data-l="en"],html[data-lang="en"] [data-l="fr"]{display:none !important}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="./">Waxal 2.0</a>
+  <div class="lang"><button id="bfr" class="on" type="button">FR</button> <button id="ben" type="button">EN</button></div>
+</header>
+
+<section class="hero">
+  <span class="tag" data-l="fr">GRATUIT · SANS COMPTE</span><span class="tag" data-l="en">FREE · NO ACCOUNT NEEDED</span>
+  <h1 data-l="fr">Parlez <span>wolof</span><br>au quotidien</h1>
+  <h1 data-l="en">Speak <span>Wolof</span><br>every day</h1>
+  <p class="lead" data-l="fr">Apprenez le wolof avec des enregistrements de locuteurs natifs, des quiz et de courts dialogues.</p>
+  <p class="lead" data-l="en">Learn Wolof with recordings by native speakers, quizzes and short dialogues.</p>
+  <a class="play" href="https://play.google.com/store/apps/details?id=com.freeappstudios.waxal">
+    <span>▶</span><span><small data-l="fr">Disponible sur</small><small data-l="en">Get it on</small>Google Play</span>
+  </a>
+  <div class="note" data-l="fr">Android · gratuit, avec publicités</div>
+  <div class="note" data-l="en">Android · free, with ads</div>
+</section>
+
+<section class="feat">
+  <div class="f"><div class="e">🎧</div><b data-l="fr">Audio natif</b><b data-l="en">Native audio</b>
+    <p data-l="fr">Des phrases enregistrées par de vrais locuteurs pour habituer votre oreille.</p>
+    <p data-l="en">Phrases recorded by real speakers to train your ear.</p></div>
+  <div class="f"><div class="e">🧠</div><b>Quiz</b>
+    <p data-l="fr">Testez-vous avec des quiz audio pour retenir durablement.</p>
+    <p data-l="en">Test yourself with audio quizzes to remember for good.</p></div>
+  <div class="f"><div class="e">💬</div><b data-l="fr">Mini-dialogues</b><b data-l="en">Mini dialogues</b>
+    <p data-l="fr">De courtes conversations construites à partir de vraies phrases.</p>
+    <p data-l="en">Short conversations built from real phrases.</p></div>
+</section>
+
+<footer>
+  <a href="../speakdaily-privacy-policy/" data-l="fr">Politique de confidentialité</a><a href="../speakdaily-privacy-policy/" data-l="en">Privacy Policy</a>
+  <a href="mailto:zikmama@gmail.com">Contact</a>
+  <a href="../">FreeAppStudios</a>
+  <span>© 2026</span>
+</footer>
+
+<script>
+  (function(){
+    var d=document.documentElement,l='fr';
+    try{l=localStorage.getItem('lang')||((navigator.language||'fr').slice(0,2)==='fr'?'fr':'en')}catch(e){}
+    function set(x){d.setAttribute('data-lang',x);d.lang=x;
+      document.getElementById('bfr').className=x==='fr'?'on':'';
+      document.getElementById('ben').className=x==='en'?'on':'';
+      try{localStorage.setItem('lang',x)}catch(e){}}
+    document.getElementById('bfr').onclick=function(){set('fr')};
+    document.getElementById('ben').onclick=function(){set('en')};
+    set(l);
+  })();
+</script>
+</body>
+</html>
