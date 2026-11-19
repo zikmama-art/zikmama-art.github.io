@@ -162,3 +162,4 @@ brightcom.com, 23120, RESELLER
 playdigo.com, 1965, RESELLER
 targetbetter.com, 82228, RESELLER
 thebrave.io, 1234634, RESELLER, c25b2154543746ac
+vungle.com, 6afe04a48a4ab1588b4bc9fd, DIRECT, c107d686becd2d77
